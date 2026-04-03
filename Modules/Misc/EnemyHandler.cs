@@ -789,7 +789,7 @@ namespace NeonLite.Modules.Misc
             ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
             */
 
-            var center = new DateTime(DateTime.Now.Year, 4, 1, 0, 0, 0, DateTimeKind.Local);
+            var center = new DateTime(DateTime.Now.Year, 0, 0, 0, 0, 0, DateTimeKind.Local);
             var now = DateTime.Now;
 
             // if in range
@@ -862,7 +862,7 @@ namespace NeonLite.Modules.Misc
 
             NeonLite.Logger.DebugMsg(HEADER + Term);
 
-            if (Chance(0.1) && LocalizationManager.TryGetTranslation(HEADER + Term, out var _))
+            if (Chance(1.0) && LocalizationManager.TryGetTranslation(HEADER + Term, out var _))
             {
                 __args[0] = HEADER + Term;
                 __result = (string)Helpers.Method(typeof(LocalizationManager), "GetTranslation").Invoke(null, __args);
